@@ -20,6 +20,9 @@ const THEME = {
   accent:        '#4f46e5'
 };
 
+const BASE_PATH = window.location.pathname.replace(/\/[^\/]*$/, '');
+
+
 /* ---------- 必需 CSS 注入（风格整体焕新） ---------- */
 (function injectCSS(){
   const css = `
@@ -226,8 +229,8 @@ function stage1(app){
 }
 
 /* ---------- 阶段2：投币动画（两批自动） ---------- */
-const IMG_FRONT='image/coin_front.png';
-const IMG_BACK ='image/coin_reverse.png';
+const IMG_FRONT = `${BASE_PATH}/image/coin_front.png`;
+const IMG_BACK = `${BASE_PATH}/image/coin_reverse.png`;
 
 function stage2(app, question){
   renderGear();
